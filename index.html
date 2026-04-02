@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="sNibaStudy — AI-powered social learning platform for NIS students">
+  <title>sNibaStudy — AI Learning Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/study.css">
+  <link rel="stylesheet" href="css/nis.css">
+  <link rel="stylesheet" href="css/resources.css">
+  <link rel="stylesheet" href="css/social.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <link rel="stylesheet" href="css/progress.css">
+  <link rel="stylesheet" href="css/saved.css">
+</head>
+<body>
+
+<div id="app-shell">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">sN</div>
+      <span class="logo-text">sNibaStudy</span>
+    </div>
+
+    <nav class="sidebar-nav" role="navigation" aria-label="Main navigation">
+
+      <div class="nav-section-label">Main</div>
+
+      <a class="nav-item active" data-route="dashboard" role="button" tabindex="0" aria-label="Dashboard">
+        <i class="fas fa-table-cells-large" aria-hidden="true"></i>
+        <span>Dashboard</span>
+      </a>
+
+      <a class="nav-item" data-route="study" role="button" tabindex="0" aria-label="Study System">
+        <i class="fas fa-brain" aria-hidden="true"></i>
+        <span>Study System</span>
+        <span class="nav-badge ai-badge">AI</span>
+      </a>
+
+      <a class="nav-item" data-route="flashcards" role="button" tabindex="0" aria-label="Flashcards">
+        <i class="fas fa-layer-group" aria-hidden="true"></i>
+        <span>Flashcards</span>
+      </a>
+
+      <a class="nav-item" data-route="tests" role="button" tabindex="0" aria-label="Tests">
+        <i class="fas fa-file-circle-check" aria-hidden="true"></i>
+        <span>Tests</span>
+      </a>
+
+      <a class="nav-item" data-route="nis" role="button" tabindex="0" aria-label="NIS Program">
+        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+        <span>NIS Program</span>
+      </a>
+
+      <a class="nav-item" data-route="resources" role="button" tabindex="0" aria-label="Resources Hub">
+        <i class="fas fa-link" aria-hidden="true"></i>
+        <span>Resources Hub</span>
+      </a>
+
+      <div class="nav-section-label">Social</div>
+
+      <a class="nav-item" data-route="friends" role="button" tabindex="0" aria-label="Friends">
+        <i class="fas fa-user-group" aria-hidden="true"></i>
+        <span>Friends</span>
+        <span class="nav-dot online" aria-label="Online"></span>
+      </a>
+
+      <a class="nav-item" data-route="rooms" role="button" tabindex="0" aria-label="Study Rooms">
+        <i class="fas fa-door-open" aria-hidden="true"></i>
+        <span>Study Rooms</span>
+      </a>
+
+      <div class="nav-section-label">Personal</div>
+
+      <a class="nav-item" data-route="tools" role="button" tabindex="0" aria-label="Study Tools">
+        <i class="fas fa-stopwatch" aria-hidden="true"></i>
+        <span>Study Tools</span>
+      </a>
+
+      <a class="nav-item" data-route="progress" role="button" tabindex="0" aria-label="My Progress">
+        <i class="fas fa-chart-line" aria-hidden="true"></i>
+        <span>My Progress</span>
+      </a>
+
+      <a class="nav-item" data-route="saved" role="button" tabindex="0" aria-label="Saved">
+        <i class="fas fa-bookmark" aria-hidden="true"></i>
+        <span>Saved</span>
+      </a>
+
+      <a class="nav-item" data-route="profile" role="button" tabindex="0" aria-label="Profile">
+        <i class="fas fa-circle-user" aria-hidden="true"></i>
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-chip" id="sidebar-user-chip">
+        <div class="user-avatar" id="sidebar-avatar">A</div>
+        <div class="user-info">
+          <span class="user-name" id="sidebar-name">Student</span>
+          <span class="user-level">Level <span id="sidebar-level">1</span> · <span id="sidebar-xp">0</span> XP</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ MAIN AREA ═══════════════ -->
+  <div id="main-area">
+
+    <!-- Top Header -->
+    <header id="top-header" role="banner">
+      <div class="header-left">
+        <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle sidebar" aria-expanded="false">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        <div class="header-title-group">
+          <h1 id="page-title">Dashboard</h1>
+          <span id="page-subtitle" class="page-subtitle"></span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-search" role="search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="text" id="global-search" placeholder="Search topics, subjects..." autocomplete="off" aria-label="Search topics">
+          <div id="search-dropdown" class="search-dropdown" hidden role="listbox" aria-label="Search results"></div>
+        </div>
+        <button class="icon-btn" id="notif-btn" aria-label="Notifications" aria-haspopup="true">
+          <i class="fas fa-bell" aria-hidden="true"></i>
+          <span class="notif-dot" id="notif-dot" hidden></span>
+        </button>
+        <div class="header-avatar" id="header-avatar" aria-label="User profile" role="button" tabindex="0">A</div>
+      </div>
+    </header>
+
+    <!-- Dynamic Page Content -->
+    <main id="page-container" role="main" aria-live="polite">
+      <!-- Rendered dynamically by router -->
+    </main>
+
+  </div><!-- /#main-area -->
+
+</div><!-- /#app-shell -->
+
+<!-- Mobile sidebar overlay -->
+<div id="sidebar-overlay" aria-hidden="true"></div>
+
+<!-- Global Toast -->
+<div id="global-toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+<!-- Focus Mode Overlay -->
+<div id="focus-overlay" hidden aria-modal="true" role="dialog" aria-label="Focus mode">
+  <div class="focus-content">
+    <div class="focus-badge">Focus Mode</div>
+    <div id="focus-subject-label" class="focus-subject">Study Session</div>
+    <div id="focus-timer-display" class="focus-timer">25:00</div>
+    <div id="focus-phase" class="focus-phase">Work</div>
+    <div class="focus-actions">
+      <button id="focus-pause-btn" class="btn btn-primary btn-lg">
+        <i class="fas fa-pause"></i> Pause
+      </button>
+      <button id="focus-exit-btn" class="btn btn-ghost">
+        <i class="fas fa-arrow-left"></i> Exit Focus
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Profile Quick Dropdown -->
+<div id="profile-dropdown" class="dropdown-panel" hidden role="menu">
+  <div class="dropdown-header">
+    <div class="user-avatar lg" id="dropdown-avatar">A</div>
+    <div>
+      <div class="dropdown-name" id="dropdown-name">Student</div>
+      <div class="dropdown-level" id="dropdown-level-text">Level 1</div>
+    </div>
+  </div>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" data-route="profile" role="menuitem">
+    <i class="fas fa-circle-user"></i> My Profile
+  </a>
+  <a class="dropdown-item" data-route="progress" role="menuitem">
+    <i class="fas fa-chart-line"></i> My Progress
+  </a>
+  <a class="dropdown-item" data-route="saved" role="menuitem">
+    <i class="fas fa-bookmark"></i> Saved Content
+  </a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item danger" id="clear-data-btn" role="menuitem">
+    <i class="fas fa-trash"></i> Clear All Data
+  </a>
+</div>
+
+<!-- Notification Panel -->
+<div id="notif-panel" class="dropdown-panel" hidden role="dialog" aria-label="Notifications">
+  <div class="panel-header">
+    <span>Notifications</span>
+    <button class="btn-text" id="mark-all-read">Mark all read</button>
+  </div>
+  <div id="notif-list"></div>
+</div>
+
+<!-- Script Load Order: utils → store → data → modules → pages → app -->
+<script src="js/modules/utils.js"></script>
+<script src="js/store.js"></script>
+<script src="js/data/nis-curriculum.js"></script>
+<script src="js/data/resources.js"></script>
+<script src="js/data/study-kb.js"></script>
+<script src="js/modules/pomodoro.js"></script>
+<script src="js/modules/flashcards.js"></script>
+<script src="js/modules/quiz.js"></script>
+<script src="js/modules/goals.js"></script>
+<script src="js/router.js"></script>
+<script src="js/pages/dashboard.js"></script>
+<script src="js/pages/study.js"></script>
+<script src="js/pages/nis.js"></script>
+<script src="js/pages/resources.js"></script>
+<script src="js/pages/social.js"></script>
+<script src="js/pages/tools.js"></script>
+<script src="js/pages/progress.js"></script>
+<script src="js/pages/saved.js"></script>
+<script src="js/pages/profile.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

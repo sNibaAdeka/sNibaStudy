@@ -1,0 +1,234 @@
+/* ═══════════════════════════════════════════
+   sNibaStudy — Saved Content Page
+   ═══════════════════════════════════════════ */
+
+/* ── Saved Layout ── */
+.saved-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Saved Sessions Grid ── */
+.saved-sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--card-gap);
+}
+
+.saved-session-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.saved-session-card:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-sm);
+}
+
+.saved-session-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.saved-session-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.saved-session-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.saved-session-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-session-subject {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.saved-session-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.saved-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.saved-meta-item i { font-size: 11px; }
+
+.saved-session-score {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.saved-session-score.high   { color: var(--green); }
+.saved-session-score.medium { color: var(--yellow); }
+.saved-session-score.low    { color: var(--red); }
+.saved-session-score.none   { color: var(--text-muted); }
+
+.saved-session-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.saved-session-actions .btn { flex: 1; justify-content: center; font-size: 12.5px; }
+
+.saved-delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.saved-delete-btn:hover {
+  background: var(--red-dim);
+  border-color: rgba(248, 113, 113, 0.3);
+  color: var(--red);
+}
+
+/* ── Saved Flashcard Decks ── */
+.flashcard-decks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--card-gap);
+}
+
+.deck-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.deck-card:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.deck-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.deck-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.deck-count {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.deck-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.deck-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* ── Saved Topics ── */
+.saved-topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.saved-topic-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.saved-topic-item:hover {
+  border-color: var(--border-active);
+  background: var(--bg-card-hover);
+}
+
+.saved-topic-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.saved-topic-name {
+  flex: 1;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.saved-topic-subject {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}

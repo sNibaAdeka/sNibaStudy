@@ -1,0 +1,420 @@
+/* ═══════════════════════════════════════════
+   sNibaStudy — Social Page (Friends, Rooms, Leaderboard)
+   ═══════════════════════════════════════════ */
+
+/* ── Friends Grid ── */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--card-gap);
+}
+
+.friend-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color var(--transition);
+}
+
+.friend-card:hover {
+  border-color: var(--border-active);
+}
+
+.friend-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.friend-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.friend-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.friend-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.friend-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.friend-school {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.friend-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.friend-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.friend-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.friend-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.friend-study-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.friend-study-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.friend-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.friend-actions .btn { flex: 1; justify-content: center; }
+
+/* ── Add Friend CTA ── */
+.add-friend-card {
+  background: var(--bg-card);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 180px;
+}
+
+.add-friend-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.add-friend-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: all var(--transition);
+}
+
+.add-friend-card:hover .add-friend-icon {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.add-friend-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* ── Full Leaderboard Table ── */
+.leaderboard-full {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.leaderboard-full-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lb-table {
+  width: 100%;
+}
+
+.lb-table-head {
+  display: grid;
+  grid-template-columns: 50px 1fr 100px 100px 80px;
+  padding: 10px 20px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.lb-table-head span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lb-table-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 100px 100px 80px;
+  padding: 12px 20px;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition);
+}
+
+.lb-table-row:last-child { border-bottom: none; }
+.lb-table-row:hover { background: rgba(255, 255, 255, 0.02); }
+
+.lb-table-row.is-me {
+  background: var(--accent-dim);
+  border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+}
+
+.lb-table-row:hover.is-me {
+  background: rgba(0, 212, 170, 0.12);
+}
+
+.lb-rank-cell {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.lb-rank-cell.gold   { color: #f59e0b; }
+.lb-rank-cell.silver { color: #9ca3af; }
+.lb-rank-cell.bronze { color: #cd7f32; }
+
+.lb-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lb-user-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.lb-user-grade { font-size: 11.5px; color: var(--text-muted); }
+
+.lb-xp-cell {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.lb-time-cell {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lb-streak-cell {
+  font-size: 13.5px;
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .lb-table-head,
+  .lb-table-row {
+    grid-template-columns: 40px 1fr 80px 60px;
+  }
+  .lb-table-head span:nth-child(4),
+  .lb-table-row > *:nth-child(4) { display: none; }
+}
+
+/* ── Study Rooms ── */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--card-gap);
+}
+
+.room-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.room-card:hover {
+  border-color: var(--border-active);
+  box-shadow: var(--shadow);
+}
+
+.room-card.active {
+  border-color: var(--green);
+}
+
+.room-card.active::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--green);
+}
+
+.room-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.room-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.room-info { flex: 1; }
+
+.room-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.room-subject {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.room-status {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.room-status.live { background: var(--green-dim); color: var(--green); }
+.room-status.scheduled { background: var(--blue-dim); color: var(--blue); }
+.room-status.open { background: var(--accent-dim); color: var(--accent); }
+
+.room-participants {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.room-avatars {
+  display: flex;
+}
+
+.room-avatars .mini-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  border: 2px solid var(--bg-card);
+  margin-left: -6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.room-avatars .mini-avatar:first-child { margin-left: 0; }
+
+.room-participant-count {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.room-timer {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Room Modal ── */
+.room-modal-timer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.room-modal-time {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.room-modal-phase {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.room-modal-participants {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.room-participant-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}

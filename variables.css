@@ -1,0 +1,104 @@
+/* ═══════════════════════════════════════════
+   sNibaStudy — Design Tokens
+   Dark theme color system + layout constants
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* ── Backgrounds ── */
+  --bg-base:         #0d0d0d;
+  --bg-surface:      #121212;
+  --bg-card:         #1a1a1a;
+  --bg-card-hover:   #1f1f1f;
+  --bg-sidebar:      #111111;
+  --bg-header:       #0d0d0d;
+  --bg-input:        #1e1e1e;
+  --bg-modal:        #161616;
+  --bg-dropdown:     #1c1c1c;
+  --bg-tooltip:      #2a2a2a;
+
+  /* ── Borders ── */
+  --border:          #252525;
+  --border-subtle:   #1e1e1e;
+  --border-active:   #3a3a3a;
+  --border-focus:    rgba(0, 212, 170, 0.4);
+
+  /* ── Text ── */
+  --text-primary:    #f2f2f2;
+  --text-secondary:  #a0a0a0;
+  --text-muted:      #5a5a5a;
+  --text-placeholder:#454545;
+
+  /* ── Accent — Cyan/Teal Primary ── */
+  --accent:          #00d4aa;
+  --accent-hover:    #00c49c;
+  --accent-dim:      rgba(0, 212, 170, 0.10);
+  --accent-dim-hover:rgba(0, 212, 170, 0.18);
+  --accent-glow:     0 0 24px rgba(0, 212, 170, 0.20);
+
+  /* ── Extended Palette ── */
+  --purple:          #a78bfa;
+  --purple-hover:    #9470f5;
+  --purple-dim:      rgba(167, 139, 250, 0.10);
+
+  --blue:            #60a5fa;
+  --blue-hover:      #4a96f5;
+  --blue-dim:        rgba(96, 165, 250, 0.10);
+
+  --orange:          #fb923c;
+  --orange-dim:      rgba(251, 146, 60, 0.10);
+
+  --red:             #f87171;
+  --red-hover:       #f05252;
+  --red-dim:         rgba(248, 113, 113, 0.10);
+
+  --green:           #4ade80;
+  --green-dim:       rgba(74, 222, 128, 0.10);
+
+  --yellow:          #fbbf24;
+  --yellow-dim:      rgba(251, 191, 36, 0.10);
+
+  --pink:            #f472b6;
+  --pink-dim:        rgba(244, 114, 182, 0.10);
+
+  /* ── Layout ── */
+  --sidebar-width:   240px;
+  --header-height:   60px;
+  --page-padding:    28px;
+  --card-gap:        16px;
+
+  /* ── Border Radius ── */
+  --radius-xl:       16px;
+  --radius:          12px;
+  --radius-sm:       8px;
+  --radius-xs:       6px;
+  --radius-pill:     999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:       0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow:          0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-lg:       0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-accent:   0 4px 20px rgba(0, 212, 170, 0.15);
+
+  /* ── Transitions ── */
+  --transition:      0.18s ease;
+  --transition-slow: 0.35s ease;
+  --transition-bounce: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Typography ── */
+  --font:            'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:       'SF Mono', 'Fira Code', monospace;
+
+  /* ── Z-index layers ── */
+  --z-base:          1;
+  --z-header:        100;
+  --z-sidebar:       200;
+  --z-dropdown:      300;
+  --z-modal:         400;
+  --z-toast:         500;
+  --z-focus:         600;
+
+  /* ── Scrollbar ── */
+  --scrollbar-w:     6px;
+  --scrollbar-thumb: #2a2a2a;
+  --scrollbar-track: transparent;
+}
